@@ -2,9 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book Recommendation System</title>
 
   <!-- Bootstrap 5 CSS -->
@@ -28,9 +26,9 @@
     <div class="container-fluid d-flex justify-content-between align-items-center">
       <span class="navbar-brand fw-bold">Book Recommendation System</span>
       <div class="d-flex">
-        <a class="nav-link px-3 active" href="#">Home</a>
+        <a class="nav-link px-3 {% if active_page == 'home' %}active{% endif %}" href="/">Home</a>
+        <a class="nav-link px-3 {% if active_page == 'recommend' %}active{% endif %}" href="/recommend">Recommend</a>
         <a class="nav-link px-3" href="#">Contact</a>
-        <a class="nav-link px-3" href="#">Recommend</a>
       </div>
     </div>
   </nav>
@@ -39,7 +37,6 @@
   <div class="container mt-4">
     <h1 class="text-center mb-4">Top 50 Books</h1>
     <div class="row justify-content-center">
-
       {% for book, author, image, votes, rating in books %}
         <div class="col-lg-3 col-md-6 mb-4">
           <div class="card h-100 book-card">
@@ -53,7 +50,6 @@
           </div>
         </div>
       {% endfor %}
-
     </div>
   </div>
 
